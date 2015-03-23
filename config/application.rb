@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module ApiToDo
+module ToDo
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -22,7 +22,13 @@ module ApiToDo
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.middleware.use Rack::Cors do
+    #config.action_dispatch.default_headers = {
+    #'Access-Control-Allow-Origin' => '*',
+    #'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
+    #'Access-Control-Allow-Method' => '*',
+    #'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+  #}
+  config.middleware.use Rack::Cors do
       allow do
         origins '*'
         resource '*', 

@@ -1,7 +1,7 @@
 class CreateTasks < ActiveRecord::Migration
   def change
     create_table :tasks do |t|
-      t.string :task
+      t.string :body
       t.boolean :status, default: false
 
       t.timestamps null: false
