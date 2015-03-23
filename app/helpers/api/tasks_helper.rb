@@ -1,2 +1,2 @@
-module Api::TasksHelper
+module API::TasksHelper
 end
