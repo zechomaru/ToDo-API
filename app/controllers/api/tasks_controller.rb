@@ -12,7 +12,8 @@ class API::TasksController < ApplicationController
 		end
 	end
 	def show
-		
+		task = Task.find(params[:id])
+		render json: task
 	end
 	def update
 		task = Task.find(params[:id])
